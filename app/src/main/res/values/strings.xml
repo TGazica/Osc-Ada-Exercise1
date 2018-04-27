@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exercise 1</string>
+    <string name="newtask_savetask">Save task</string>
+    <string name="newtask_textview_enterTaskTitle">Enter task title:</string>
+    <string name="newtask_edittext_enterTaskTitle_hint">Finish homework</string>
+    <string name="newtask_textview_enterTaskSummary">Enter task summary:</string>
+    <string name="newtask_textview_enterTaskSummary_hint">Do OSC homework, all of the exercises</string>
+    <string name="newtask_textview_enterTaskImportance">Enter task importance:</string>
+    <string name="newtask_edittext_enterTaskImportance_hint">1</string>
+    <string name="scrollvew_noTaskText">No tasks to show</string>
+</resources>
