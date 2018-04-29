@@ -11,7 +11,7 @@ public class TasksRepository {
 
 	private FakeDatabase mDatabase;
 
-	public TasksRepository(){
+	private TasksRepository(){
 		mDatabase = new FakeDatabase();
 	}
 

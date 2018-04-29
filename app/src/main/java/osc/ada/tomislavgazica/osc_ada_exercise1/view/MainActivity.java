@@ -15,20 +15,18 @@ import osc.ada.tomislavgazica.osc_ada_exercise1.model.Task;
 
 public class MainActivity extends AppCompatActivity {
 
-	TasksRepository mRepository;
+	TasksRepository mRepository = TasksRepository.getInstance();
 
     @BindView(R.id.edittext_newtask_title) EditText mTitle;
     @BindView(R.id.edittext_newtask_summary) EditText mSummary;
     @BindView(R.id.edittext_newtask_importance) EditText mImportance;
     @BindView(R.id.textview_newtask_display) TextView mDisplay;
-    TasksRepository repository = new TasksRepository();
     Task task;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-        mRepository = TasksRepository.getInstance();
 		ButterKnife.bind(this);
 
 	}
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 		// Store the task in the fake database using the repository
 
         task = new Task(Integer.parseInt(mImportance.getText().toString()), mTitle.getText().toString(), mSummary.getText().toString());
-        repository.save(task);
+        mRepository.save(task);
 
 		// ToDo:	clear the UI for the new task
 		// Clear all of the editText controls
@@ -61,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 	public void listTasks(){
 	    StringBuilder sb = new StringBuilder();
 
-	    for (int i= 0; i < repository.getTasks().size(); i++){
-	        sb.append(repository.getTasks().get(i));
+	    for (int i= 0; i < mRepository.getTasks().size(); i++){
+	        sb.append(mRepository.getTasks().get(i));
         }
 
         mDisplay.setText(sb);

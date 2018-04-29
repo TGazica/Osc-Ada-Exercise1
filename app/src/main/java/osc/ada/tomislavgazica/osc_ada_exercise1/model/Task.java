@@ -38,7 +38,7 @@ public class Task {
 	@Override
 	public String toString() {
 		return "Importance: " + mImportance +
-				", Title: " + mTitle + '\'' +
-				", Summary='" + mSummary + "\n";
+				", Title: " + mTitle  +
+				", Summary: " + mSummary + "\n";
 	}
 }
